@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
+import Footer from './Components/Footer/Footer';
+
 import './App.css';
 
 
@@ -37,7 +39,7 @@ class App extends Component {
         <Container className='p-0' fluid={true}>
           <Navbar className='border-bottom' bg='transparent' expand='lg'>
             <Navbar.Brand>Daniel Vega</Navbar.Brand>
-            <Navbar.Toggle aria-controls='navbar-toggle' className='border-0'/>
+            <Navbar.Toggle aria-controls='navbar-toggle' className='border-0' />
             <Navbar.Collapse id='navbar-toggle'>
               <Nav className='ml-auto'>
                 <Link className='nav-link' to='/'>Home</Link>
@@ -47,7 +49,7 @@ class App extends Component {
             </Navbar.Collapse>
           </Navbar>
           <div>Hello World</div>
-
+          <Footer />
         </Container>
       </Router>
     );
