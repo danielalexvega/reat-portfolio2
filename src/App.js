@@ -37,7 +37,7 @@ class App extends Component {
         <Container className='p-0' fluid={true}>
           <Navbar className='border-bottom' bg='transparent' expand='lg'>
             <Navbar.Brand>Daniel Vega</Navbar.Brand>
-            <Navbar.Toggle aria-controls='navbar-toggle' className=''/>
+            <Navbar.Toggle aria-controls='navbar-toggle' className='border-0'/>
             <Navbar.Collapse id='navbar-toggle'>
               <Nav className='ml-auto'>
                 <Link className='nav-link' to='/'>Home</Link>
