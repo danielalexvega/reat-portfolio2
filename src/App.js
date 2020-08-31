@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
+
 import Footer from './Components/Footer/Footer';
+import HomePage from './Pages/Homepage';
+import AboutPage from './Pages/About';
+import ContactPage from './Pages/Contact';
 
 import './App.css';
 
@@ -48,7 +52,13 @@ class App extends Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <div>Hello World</div>
+
+          <Route path='/' exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle}  text={this.state.home.text}/>} />
+
+          <Route path='/about' exact render={() => <AboutPage title={this.state.about.title} subTitle={this.state.about.subTitle} />} />
+
+          <Route path='/contact' exact render={() => <ContactPage title={this.state.contact.title} />} />
+
           <Footer />
         </Container>
       </Router>
