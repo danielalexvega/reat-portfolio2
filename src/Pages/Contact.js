@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Hero from '../Components/Hero/Hero';
 import Content from '../Components/Content/Content';
 import { Form, Button } from 'react-bootstrap';
+import Axios from 'axios';
 
 function ContactPage(props) {
   const [name, setName] = useState('');
@@ -26,7 +27,25 @@ function ContactPage(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setDisabled(true);
-    console.log('banana');
+
+    let emailObj = {
+      name: name,
+      email: email,
+      message: message
+    }
+    Axios.post('/api/email', emailObj)
+      .then(res => {
+        if (res.data.success) {
+          setDisabled(false);
+          setEmailSent(true);
+        } else {
+          setDisabled(false);
+          setEmailSent(false);
+        }
+      }).catch(err => {
+        setDisabled(false);
+        setEmailSent(false);
+      })
   }
 
   return (
