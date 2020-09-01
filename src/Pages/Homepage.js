@@ -4,10 +4,10 @@ import Carousel from '../Components/Carousel/Carousel';
 
 function HomePage(props) {
   return(
-    <>
-    <Hero title={props.title} subTitle={props.subTitle} text={props.text}/>
-    <Carousel />
-    </>
+    <div>
+      <Hero title={props.title} subTitle={props.subTitle} text={props.text}/>
+      <Carousel />
+    </div>
   )
 };
 
